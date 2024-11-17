@@ -35,13 +35,13 @@ public class DriverInstance{
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--start-maximized"); 
 			options.addArguments("--disable-notifications"); 
-			options.addArguments("--incognito");
+			//options.addArguments("--incognito");
 		  	DesiredCapabilities dc = new DesiredCapabilities();
 			dc.setBrowserName("chrome");
 			dc.setPlatform(Platform.LINUX);
 			options.merge(dc);
 
-			remoteWebdriver.set(new RemoteWebDriver(new URL("http://20.40.53.202:4444/wd/hub"), options));
+			remoteWebdriver.set(new RemoteWebDriver(new URL("http://4.240.78.181:32000/wd/hub"), options));
 			break;
 		case "firefox":
 			FirefoxOptions firefoxOptions = new FirefoxOptions();
@@ -49,7 +49,7 @@ public class DriverInstance{
 			desiredCap.setBrowserName("firefox");
 			desiredCap.setPlatform(Platform.LINUX);
 			firefoxOptions.merge(desiredCap);
-			remoteWebdriver.set(new RemoteWebDriver(new URL("http://20.40.53.202:4444/wd/hub"), firefoxOptions));
+			remoteWebdriver.set(new RemoteWebDriver(new URL("http://4.240.78.181:32000/wd/hub"), firefoxOptions));
 			break;
 		case "edge":
 			EdgeOptions edgeOptions = new EdgeOptions();
@@ -57,7 +57,7 @@ public class DriverInstance{
 			desiredCapEdge.setBrowserName("MicrosoftEdge");
 			desiredCapEdge.setPlatform(Platform.LINUX);
 			edgeOptions.merge(desiredCapEdge);
-			remoteWebdriver.set(new RemoteWebDriver(new URL("http://20.40.53.202:4444/wd/hub"), edgeOptions));
+			remoteWebdriver.set(new RemoteWebDriver(new URL("http://4.240.78.181:32000/wd/hub"), edgeOptions));
 			break;	
 		case "ie":
 			remoteWebdriver.set(new InternetExplorerDriver());
